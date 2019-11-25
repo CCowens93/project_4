@@ -1,13 +1,13 @@
 from django.db import models
 
+
 class SleepGoal(models.Model):
     sleep_goals = models.CharField(
         max_length=255, 
         default='n/a')
-    hours_of_sleep = models.CharField(
-        max_length=100, 
+    hours_of_sleep = models.IntegerField( 
         default='n/a')
-    bedtime = models.CharField(
+    bedtime = models.TimeField(
         max_length=100, 
         default='n/a')
     routine = models.CharField(
@@ -161,6 +161,7 @@ class DietaryGoal(models.Model):
         choices = dietary_goal_choices,
         default = 'n/a'
     )
+   
 
     dairy = 'dairy'
     soy = 'soy'
@@ -189,7 +190,3 @@ class DietaryGoal(models.Model):
 
     def __str__(self):
         return self.dietary_goal
-
-
-
-
