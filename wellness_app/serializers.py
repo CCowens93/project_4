@@ -1,6 +1,4 @@
-from django.shortcuts import render
-
+from rest_framework import serializers
 
 from .models import SleepGoal, ExerciseGoal, MentalHealthGoal, ExerciseSchedule, DietaryGoal
 
-# Create your views here.
