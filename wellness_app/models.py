@@ -106,9 +106,29 @@ class ExerciseSchedule(models.Model):
         return self.daily_focus
 
 class DietaryGoal(models.Model):
+
+    dairy = 'dairy'
+    soy = 'soy'
+    red_meat = 'red meat'
+    pork = 'pork'
+    processed_sugar = 'processed sugar'
+    alcohol = 'alcohol'
+    gluten = 'gluten'
+
+    elimination_choices = [
+        (dairy, 'dairy'),
+        (soy, 'soy'),
+        (red_meat, 'red meat'),
+        (pork, 'pork'),
+        (processed_sugar, 'processed sugar'),
+        (alcohol, 'alcohol'),
+        (gluten, 'gluten')
+    ]
+
  
     elimination = models.CharField(
         max_length =500,
+        choices = elimination_choices,
         default ='n/a'
     )
 
