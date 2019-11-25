@@ -40,7 +40,28 @@ class ExerciseGoal(models.Model):
         choices = body_goals_choices
     )
 
+    def __str__(self):
+        return self.body_goals
+
 class MentalHealthGoal(models.Model):
+
+    reduce_anxiety = 'reduce anxiety'
+    reduce_depression = 'reduce depression'
+    increase_self_esteem = 'increase self-esteem'
+    reduce_and_or_eliminate_substance_use = 'substance use'
+
+    mental_health_goal_choices = [
+        (reduce_anxiety, 'reduce anxiety'),
+        (reduce_depression, 'reduce depression'),
+        (increase_self_esteem, 'increase self_esteem'),
+        (reduce_and_or_eliminate_substance_use, 'reduce and/or reduce substance use')
+    ]
+
+    mental_health_goal = models.CharField(
+        max_length= 255,
+        choices = mental_health_goal_choices,
+        default= 'n/a'
+    )
  
     medication = models.CharField(
         max_length = 255,
@@ -51,6 +72,24 @@ class MentalHealthGoal(models.Model):
     meditation = models.CharField(
         max_length = 255,
         default ='n/a'
+    )
+    
+    twice_a_week = 'twice a week'
+    once_a_week = 'once a week'
+    every_other_week = 'every other week'
+    once_a_month = 'once a month'
+
+    therapy_sessions_choices = [
+        (twice_a_week, 'twice a week'),
+        (once_a_week, 'once a week'),
+        (every_other_week, 'every other week'),
+        (once_a_month, 'once a month')
+    ]
+
+    therapy = models.CharField(
+        max_length = 500,
+        choices = therapy_sessions_choices,
+        default = 'n/a'
     )
 
 class ExerciseSchedule(models.Model):
@@ -85,13 +124,13 @@ class ExerciseSchedule(models.Model):
     )
  
     cardio = 'cardio'
-    strength_building = 'strength building'
+    strength_building = 'build strength'
     flexibility = 'flexibility'
     balance = 'balance'
  
     type_of_exercise = [
         (cardio, 'cardio'),
-        (strength_building, 'strength building'),
+        (strength_building, 'build strength'),
         (flexibility, 'flexibility'),
         (balance, 'balance')
     ]
@@ -106,6 +145,22 @@ class ExerciseSchedule(models.Model):
         return self.daily_focus
 
 class DietaryGoal(models.Model):
+
+    lose_weight = 'lose weight'
+    gain_weight = 'gain weight'
+    improve_health = 'improve health'
+
+    dietary_goal_choices = [
+        (lose_weight, 'lose weight'),
+        (gain_weight, 'gain weight'),
+        (improve_health, 'improve health')
+    ]
+
+    dietary_goal = models.CharField(
+        max_length = 500,
+        choices = dietary_goal_choices,
+        default = 'n/a'
+    )
 
     dairy = 'dairy'
     soy = 'soy'
@@ -131,6 +186,9 @@ class DietaryGoal(models.Model):
         choices = elimination_choices,
         default ='n/a'
     )
+
+    def __str__(self):
+        return self.dietary_goal
 
 
 
