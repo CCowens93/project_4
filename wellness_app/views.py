@@ -1,8 +1,8 @@
 # from django.shortcuts import render
 from rest_framework import viewsets
 
-from .serializers import SleepGoalSerializer, ExerciseGoalSerializer, MentalHealthGoalSerializer, ExerciseScheduleSerializer, DietaryGoalSerializer
-from .models import SleepGoal, ExerciseGoal, MentalHealthGoal, ExerciseSchedule, DietaryGoal
+from .serializers import SleepGoalSerializer, ExerciseGoalSerializer, MentalHealthGoalSerializer, DietaryGoalSerializer
+from .models import SleepGoal, ExerciseGoal, MentalHealthGoal, DietaryGoal
 
 # Create your views here.
 class SleepGoalView(viewsets.ModelViewSet):
@@ -16,10 +16,6 @@ class ExerciseGoalView(viewsets.ModelViewSet):
 class MentalHealthGoalView(viewsets.ModelViewSet):
     queryset = MentalHealthGoal.objects.all()
     serializer_class = MentalHealthGoalSerializer
-
-class ExerciseScheduleView(viewsets.ModelViewSet):
-    queryset = ExerciseSchedule.objects.all()
-    serializer_class = ExerciseScheduleSerializer
 
 class DietaryGoalView(viewsets.ModelViewSet):
     queryset = DietaryGoal.objects.all()

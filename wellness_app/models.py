@@ -37,8 +37,60 @@ class ExerciseGoal(models.Model):
  
     body_goals = models.CharField(
         max_length = 100,
-        choices = body_goals_choices
+        choices = body_goals_choices, 
+        default = 'n/a'
     )
+
+    Monday = 'Monday'
+    Tuesday = 'Tuesday'
+    Wednesday = 'Wednesday'
+    Thursday = 'Thursday'
+    Friday = 'Friday'
+    Saturday = 'Saturday'
+    Sunday = 'Sunday'
+ 
+    day_of_the_week = [
+        (Monday, 'Monday'),
+        (Tuesday, 'Tuesday'),
+        (Wednesday, 'Wednesday'),
+        (Thursday, 'Thursday'),
+        (Friday, 'Friday'),
+        (Saturday, 'Saturday'), 
+        (Sunday, 'Sunday')
+    ]
+ 
+    workout_schedule = models.CharField(
+        max_length = 100,
+        choices = day_of_the_week,
+        default= 'n/a'
+    )
+ 
+    hours_of_exercise = models.DecimalField(
+        max_digits = 2,
+        decimal_places = 1,
+        default = 0
+    )
+ 
+    cardio = 'cardio'
+    strength_building = 'build strength'
+    flexibility = 'flexibility'
+    balance = 'balance'
+ 
+    type_of_exercise = [
+        (cardio, 'cardio'),
+        (strength_building, 'build strength'),
+        (flexibility, 'flexibility'),
+        (balance, 'balance')
+    ]
+ 
+    daily_focus = models.CharField(
+        max_length=300,
+        choices = type_of_exercise,
+        default = 'n/a'
+    )
+ 
+    def __str__(self):
+        return self.daily_focus
 
     def __str__(self):
         return self.body_goals
@@ -92,57 +144,6 @@ class MentalHealthGoal(models.Model):
         default = 'n/a'
     )
 
-class ExerciseSchedule(models.Model):
- 
-    Monday = 'Monday'
-    Tuesday = 'Tuesday'
-    Wednesday = 'Wednesday'
-    Thursday = 'Thursday'
-    Friday = 'Friday'
-    Saturday = 'Saturday'
-    Sunday = 'Sunday'
- 
-    day_of_the_week = [
-        (Monday, 'Monday'),
-        (Tuesday, 'Tuesday'),
-        (Wednesday, 'Wednesday'),
-        (Thursday, 'Thursday'),
-        (Friday, 'Friday'),
-        (Saturday, 'Saturday'), 
-        (Sunday, 'Sunday')
-    ]
- 
-    workout_schedule = models.CharField(
-        max_length = 100,
-        choices = day_of_the_week,
-    )
- 
-    hours_of_exercise = models.DecimalField(
-        max_digits = 2,
-        decimal_places = 1,
-        default = 0
-    )
- 
-    cardio = 'cardio'
-    strength_building = 'build strength'
-    flexibility = 'flexibility'
-    balance = 'balance'
- 
-    type_of_exercise = [
-        (cardio, 'cardio'),
-        (strength_building, 'build strength'),
-        (flexibility, 'flexibility'),
-        (balance, 'balance')
-    ]
- 
-    daily_focus = models.CharField(
-        max_length=300,
-        choices = type_of_exercise,
-        default = 'n/a'
-    )
- 
-    def __str__(self):
-        return self.daily_focus
 
 class DietaryGoal(models.Model):
 
