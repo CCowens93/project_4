@@ -34,10 +34,9 @@ class SleepGoals extends Component {
                         <p>{sleepGoal.hours_of_sleep}</p>
                         <p>{sleepGoal.bedtime}</p>
                         <p>{sleepGoal.routine}</p>
-                        </div>)
-                    
-                    
-                })}
+                        </div>
+                        )
+                    })}
             </div>
             </div>
         )

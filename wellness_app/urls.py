@@ -11,5 +11,5 @@ router.register('exercise_schedule', views.ExerciseScheduleView)
 router.register('dietary_goal', views.DietaryGoalView)
 
 urlpatterns = [
-    path('', include(router.urls))
+    path('', include(router.urls)),
 ]
