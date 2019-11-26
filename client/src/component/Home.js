@@ -1,23 +1,19 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+import { Link } from 'react-router-dom'
 
-class Home extends Component{
-    state = {
-        allSleepGoals: []
-    }
 
-    componentDidMount() {
-        axios.get('/api/sleep_goal')
-            .then((res) => {
-                console.log(res.data)
-                const allSleepGoals = res.data;
-                this.setState({ allSleepGoals: allSleepGoals})
-            })
-        }
-    render(){
-        return(
+class Home extends Component {
+
+
+
+    render() {
+        return (
             <div className="home">
-                <h1>Wellness App</h1>
+                <Link to={`/sleep_goal`}>
+                    <div>Link to Sleep Goals</div>
+                </Link>
+
+
             </div>
         )
     }
