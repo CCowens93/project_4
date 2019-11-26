@@ -28,10 +28,10 @@ class ExerciseGoals extends Component{
                 {this.state.allExerciseGoals.map((exerciseGoal, i) => {
                     return(
                         <div className='exercise' key={i}>
-                            <p>{exerciseGoal.body_goals}</p>
-                            <p>{exerciseGoal.workout_schedule}</p>
-                            <p>{exerciseGoal.hours_of_exercise}</p>
-                            <p>{exerciseGoal.daily_focus}</p>
+                            <p>Main Goal: {exerciseGoal.body_goals}</p>
+                            <p>Schedule: {exerciseGoal.workout_schedule}</p>
+                            <p>Dedicated Time to Exercise: {exerciseGoal.hours_of_exercise}</p>
+                            <p>Focus for the Day: {exerciseGoal.daily_focus}</p>
                         </div>
                     )
                 })}

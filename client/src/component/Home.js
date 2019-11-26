@@ -19,6 +19,9 @@ class Home extends Component {
                 <Link to={`/mental_health_goal`}>
                     <div>Link to Mental Health Goals</div>
                 </Link>
+                <Link to={`/dietary_goal`}>
+                    <div>Link to Dietary Goals</div>
+                </Link>
 
 
             </div>
