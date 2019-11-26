@@ -18,12 +18,12 @@ class MentalHealthGoalSerializer(serializers.ModelSerializer):
         fields = ('id', 'mental_health_goal', 'medication', 'meditation', 'therapy')
 
 
-class ExerciseScheduleSerialixer(serializers.ModelSerializer):
+class ExerciseScheduleSerializer(serializers.ModelSerializer):
     class Meta:
         model = ExerciseSchedule
-        field = ('id', 'workout_schedule', 'hours_of_exercise', 'daily_focus')
+        fields = ('id', 'workout_schedule', 'hours_of_exercise', 'daily_focus')
 
 class DietaryGoalSerializer(serializers.ModelSerializer):
     class Meta:
         model = DietaryGoal
-        field = ('id', 'dietary_goal', 'elimination')
+        fields = ('id', 'dietary_goal', 'elimination')

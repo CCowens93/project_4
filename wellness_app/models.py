@@ -54,7 +54,7 @@ class MentalHealthGoal(models.Model):
         (reduce_anxiety, 'reduce anxiety'),
         (reduce_depression, 'reduce depression'),
         (increase_self_esteem, 'increase self_esteem'),
-        (reduce_and_or_eliminate_substance_use, 'reduce and/or reduce substance use')
+        (reduce_and_or_eliminate_substance_use, 'reduce and/or eliminate substance use')
     ]
 
     mental_health_goal = models.CharField(

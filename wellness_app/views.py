@@ -1,4 +1,5 @@
-from django.shortcuts import render
+# from django.shortcuts import render
+from rest_framework import viewsets
 
 from .serializers import SleepGoalSerializer, ExerciseGoalSerializer, MentalHealthGoalSerializer, ExerciseScheduleSerializer, DietaryGoalSerializer
 from .models import SleepGoal, ExerciseGoal, MentalHealthGoal, ExerciseSchedule, DietaryGoal

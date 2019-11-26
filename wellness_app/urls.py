@@ -4,11 +4,11 @@ from rest_framework import routers
 from . import views
 
 router = routers.DefaultRouter()
-router.register('SleepGoal', views.SleepGoalView)
-router.register('ExerciseGoal', views.ExerciseGoalView)
-router.register('MentalHealthGoal', views.MentalHealthGoalView)
-router.register('ExerciseSchedule', views.ExerciseGoalView)
-router.register('DietaryGoal', views.DietaryGoalView)
+router.register('sleep_goal', views.SleepGoalView)
+router.register('exercise_goal', views.ExerciseGoalView)
+router.register('mental_health_goal', views.MentalHealthGoalView)
+router.register('exercise_schedule', views.ExerciseScheduleView)
+router.register('dietary_goal', views.DietaryGoalView)
 
 urlpatterns = [
     path('', include(router.urls))
