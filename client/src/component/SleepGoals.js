@@ -30,10 +30,10 @@ class SleepGoals extends Component {
                 {this.state.allSleepGoals.map((sleepGoal, i) => {
                     return (
                         <div className='sleep' key={i}>
-                        <p>{sleepGoal.sleep_goals}</p>
-                        <p>{sleepGoal.hours_of_sleep}</p>
-                        <p>{sleepGoal.bedtime}</p>
-                        <p>{sleepGoal.routine}</p>
+                        <p>Main Goal: {sleepGoal.sleep_goals}</p>
+                        <p>Hours of Sleep: {sleepGoal.hours_of_sleep}</p>
+                        <p>Bedtime: {sleepGoal.bedtime}</p>
+                        <p>Routine: {sleepGoal.routine}</p>
                         </div>
                         )
                     })}

@@ -28,10 +28,10 @@ class MentalHealthGoals extends Component{
                 {this.state.allMentalHealthGoals.map((mentalHealthGoal, i) => {
                     return(
                         <div className='mental_health' key={i}>
-                            <p>{mentalHealthGoal.mental_health_goal}</p>
-                            <p>{mentalHealthGoal.medication}</p>
-                            <p>{mentalHealthGoal.meditation}</p>
-                            <p>{mentalHealthGoal.therapy}</p>
+                            <p>Main Goal: {mentalHealthGoal.mental_health_goal}</p>
+                            <p>Time Dedicated to Taking Meds: {mentalHealthGoal.medication}</p>
+                            <p>Time Dedicated to Meditation: {mentalHealthGoal.meditation}</p>
+                            <p>Set Time to Attend Therapy: {mentalHealthGoal.therapy}</p>
                         </div>
                     )
                 })}
