@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import garnet from './garnet.png' 
-import pearl from './Pearl.png'
-import steven from './Steven.png'
-import amethyst from './Amethyst.png'
+import exercise from './exercise.png'
+import sleep from './sleep.png'
+import diet from './diet.png'
+import mental_health from './mental_health.png'
+
 
 
 class Home extends Component {
@@ -13,23 +14,25 @@ class Home extends Component {
     render() {
         return (
             <div className="home">
-                <h1>Wellness App</h1>
-                <div className="sprites">
+                <h1>Universe-al Health Care</h1>
+                <div className="sprites1">
                 <Link to={`/sleep_goal`}>
-                    <div>Link to Sleep Goals</div>
-                    <img src={steven} width="325" height="325"/>
+                    <p>Sleep Goals</p>
+                    <img src={sleep} alt="sleep" width="275" height="275"/>
                 </Link>
                 <Link to={`/exercise_goal`}>
-                    <p>Link to Exercise Goals</p>
-                    <img src={garnet} width="325" height="325"/>
+                    <p>Exercise Goals</p>
+                    <img src={exercise} alt="exercise" width="275" height="275"/>
                 </Link>
+                </div>
+                <div className="sprites2">
                 <Link to={`/mental_health_goal`}>
-                    <div>Link to Mental Health Goals</div>
-                    <img src={pearl} width="325" height="325"/>
+                    <p>Mental Health Goals</p>
+                    <img src={mental_health} alt="mental_health" width="275" height="275"/>
                 </Link>
                 <Link to={`/dietary_goal`}>
-                    <div>Link to Dietary Goals</div>
-                    <img src={amethyst} width="325" height="325"/>
+                    <p>Dietary Goals</p>
+                    <img src={diet} alt="diet" width="350" height="350"/>
                 </Link>
                 </div>
 

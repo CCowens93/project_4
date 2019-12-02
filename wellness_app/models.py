@@ -1,10 +1,9 @@
 from django.db import models
 
-
 class SleepGoal(models.Model):
     sleep_goals = models.CharField(
         max_length=255, 
-        default='n/a')
+        default='n/a',)
     hours_of_sleep = models.IntegerField( 
         default='n/a')
     bedtime = models.TimeField(
@@ -13,9 +12,9 @@ class SleepGoal(models.Model):
     routine = models.CharField(
         max_length=255, 
         default='n/a')
- 
+
     def __str__(self):
-        return self.sleep_goals
+        return self.__all__
 
 
 class ExerciseGoal(models.Model):
@@ -65,9 +64,7 @@ class ExerciseGoal(models.Model):
         default= 'n/a'
     )
  
-    hours_of_exercise = models.DecimalField(
-        max_digits = 2,
-        decimal_places = 1,
+    minutes_of_exercise = models.IntegerField(
         default = 0
     )
  
@@ -90,10 +87,7 @@ class ExerciseGoal(models.Model):
     )
  
     def __str__(self):
-        return self.daily_focus
-
-    def __str__(self):
-        return self.body_goals
+        return self.__all__
 
 class MentalHealthGoal(models.Model):
 
@@ -144,6 +138,9 @@ class MentalHealthGoal(models.Model):
         default = 'n/a'
     )
 
+    def __str__(self):
+        return self.__all__
+
 
 class DietaryGoal(models.Model):
 
@@ -190,4 +187,4 @@ class DietaryGoal(models.Model):
     )
 
     def __str__(self):
-        return self.dietary_goal
+        return self.__all__

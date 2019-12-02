@@ -1,10 +1,35 @@
-.sprites{
+h1{
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  text-shadow: 0 1px 0 #CCCCCC, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15), 2px 2px 2px rgba(206,89,55,0);
+  color: #FFFFFF;
+  background: #0e8dbc;
+    
+}
+
+p {
+  text-decoration: none;
+}
+
+.sprites1{
   display:flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin-left: 250px;
-  margin-right: 250px;
-  content:0px;
-  padding:0px;
-  border:0px;
+  margin-left: 200px;
+  margin-right: 200px;
+  content:30px;
+  padding:30px;
+  border:30px;
 }
+.sprites2{
+  display:flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-left: 200px;
+  margin-right: 200px;
+  content:30px;
+  padding:30px;
+  border:30px;
+}
+
