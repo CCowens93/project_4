@@ -56,9 +56,9 @@ class DietaryGoals extends Component{
                             <select
                                 name="dietary_goals"
                                 value={this.state.handleDietaryData}>
-                                    <option name="lose_weight">Lose Weight</option>
-                                    <option name="gain_weight">Gain Weight</option>
-                                    <option name="improve_health">Improve Health</option>
+                                    <option name="lose_weight" value='lose weight'>Lose Weight</option>
+                                    <option name="gain_weight" value='gain weight'>Gain Weight</option>
+                                    <option name="improve_health" value='improve health'>Improve Health</option>
                             </select>
                         </div>
 

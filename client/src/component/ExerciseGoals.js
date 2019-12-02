@@ -27,7 +27,7 @@ class ExerciseGoals extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        axios.post('/api/exercise_goal', this.state)
+        axios.post('/api/exercise_goal/', this.state)
     }
 
     componentDidMount() {
@@ -48,6 +48,8 @@ class ExerciseGoals extends Component {
                                 <p>Schedule: {exerciseGoal.workout_schedule}</p>
                                 <p>Dedicated Time to Exercise: {exerciseGoal.minutes_of_exercise}</p>
                                 <p>Focus for the Day: {exerciseGoal.daily_focus}</p>
+                                
+                                
                             </div>);
                     })
 
@@ -65,11 +67,11 @@ class ExerciseGoals extends Component {
                                             name="body_goals"
                                             value={this.state.body_goals}
                                             onChange={this.handleExerciseData}>
-                                                <option name="weight_loss">Weight Loss</option>
-                                                <option name="increase_strength">Increase Strength</option>
-                                                <option name="improve_endurance">Improve Endurance</option>
-                                                <option name="reduce_health_risks">Reduce Health Risks</option>
-                                                <option name="energy_boost">Energy Boost</option>
+                                                <option name="weight_loss" value= 'weight loss'>Weight Loss</option>
+                                                <option name="increase_strength" value='increase strength'>Increase Strength</option>
+                                                <option name="improve_endurance" value='improve endurance'>Improve Endurance</option>
+                                                <option name="reduce_health_risks" value='reduce health risks'>Reduce Health Risks</option>
+                                                <option name="energy_boost" value='energy boost'>Energy Boost</option>
                                         </select>
                                             
                                     </div>
@@ -79,13 +81,13 @@ class ExerciseGoals extends Component {
                                             name="workout_schedule"
                                             value={this.state.workout_schedule}
                                             onChange={this.handleExerciseData}>
-                                                <option name="monday">Monday</option>
-                                                <option name="tuesday">Tuesday</option>
-                                                <option name="wednesday">Wednesday</option>
-                                                <option name="thursday">Thursday</option>
-                                                <option name="friday">Friday</option>
-                                                <option name="saturday">Saturday</option>
-                                                <option name="sunday">Sunday</option>
+                                                <option name='monday' value='Monday'>Monday</option>
+                                                <option name='tuesday' value='Tuesday'>Tuesday</option>
+                                                <option name='wednesday' value='Wednesday'>Wednesday</option>
+                                                <option name='thursday' value='Thursday'>Thursday</option>
+                                                <option name='friday' value='Friday'>Friday</option>
+                                                <option name='saturday' value='Saturday'>Saturday</option>
+                                                <option name='sunday' value='Sunday'>Sunday</option>
                                             </select>
 
                                             
@@ -107,10 +109,10 @@ class ExerciseGoals extends Component {
                                             name="daily_focus"
                                             value={this.state.daily_focus}
                                             onChange={this.handleExerciseData}>
-                                                <option name="cardio">Cardio</option>
-                                                <option name="strength_building">Strength Building</option>
-                                                <option name="flexibility">Flexibility</option>
-                                                <option name="balance">Balance</option>
+                                                <option name='cardio' value='cardio'>Cardio</option>
+                                                <option name='strength_building' value='build strength'>Strength Building</option>
+                                                <option name='flexibility' value="flexibility">Flexibility</option>
+                                                <option name='balance' value='balance'>Balance</option>
                                         </select>
                                             
                                     </div>
