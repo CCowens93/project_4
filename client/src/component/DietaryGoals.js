@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 // import { Link } from 'react-router-dom'
 
+
 class DietaryGoals extends Component{
     state = {
         dietary_goal:'',
@@ -27,8 +28,7 @@ class DietaryGoals extends Component{
         axios.get('/api/dietary_goal')
         .then((res) => {
             console.log(res.data)
-            const allDietaryGoals = res.data;
-            this.setState({allDietaryGoals: allDietaryGoals})
+            this.setState({allDietaryGoals: res.data})
         })
     }
 
@@ -55,11 +55,25 @@ class DietaryGoals extends Component{
                         <div>
                             <select
                                 name="dietary_goals"
-                                value={this.state.handleSleepData}>
+                                value={this.state.handleDietaryData}>
                                     <option name="lose_weight">Lose Weight</option>
                                     <option name="gain_weight">Gain Weight</option>
                                     <option name="improve_health">Improve Health</option>
                             </select>
+                        </div>
+
+                        <div>
+                            <select
+                                name="elimination_choices"
+                                value={this.state.handleDietaryData}>
+                                    <option name="dairy">Dairy</option>
+                                    <option name="soy">Soy</option>
+                                    <option name="red_meat">Red Meat</option>
+                                    <option name="pork">Pork</option>
+                                    <option name="processed_sugar">Processed Sugar</option>
+                                    <option name="alcohol">Alcohol</option>
+                                    <option name="gluten">Gluten</option>
+                                </select>
                         </div>
 
                         <div>

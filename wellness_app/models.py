@@ -106,9 +106,22 @@ class MentalHealthGoal(models.Model):
         choices = mental_health_goal_choices,
         default= 'n/a'
     )
+
+    does_not_apply_to_me = 'does not apply to me'
+    take_in_the_morning = 'take in the morning'
+    take_at_night = 'take at night'
+    take_in_morning_and_night = 'take in morning and night'
+
+    medication_choices = [
+        (does_not_apply_to_me, 'does not apply to me'),
+        (take_in_the_morning, 'take in the morning'),
+        (take_at_night, 'take at night'),
+        (take_in_morning_and_night, 'take in the moring and night')
+    ]
  
     medication = models.CharField(
         max_length = 255,
+        choices = medication_choices,
         default = 'n/a'
  
     )
