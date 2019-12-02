@@ -71,7 +71,7 @@ class SleepGoals extends Component {
                                 <input
                                     name="hours_of_sleep"
                                     type="number"
-                                    placeholder="Minutes of Exercise"
+                                    placeholder="Hours of Sleep"
                                     value={this.state.handleSleepData}
                                     onChange={this.handleSleepData}
                                     />

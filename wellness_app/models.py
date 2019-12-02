@@ -13,8 +13,7 @@ class SleepGoal(models.Model):
         max_length=255, 
         default='n/a')
 
-    def __str__(self):
-        return self.__all__
+    
 
 
 class ExerciseGoal(models.Model):
@@ -86,8 +85,7 @@ class ExerciseGoal(models.Model):
         default = 'n/a'
     )
  
-    def __str__(self):
-        return self.__all__
+    
 
 class MentalHealthGoal(models.Model):
 
@@ -138,8 +136,7 @@ class MentalHealthGoal(models.Model):
         default = 'n/a'
     )
 
-    def __str__(self):
-        return self.__all__
+  
 
 
 class DietaryGoal(models.Model):
@@ -186,5 +183,4 @@ class DietaryGoal(models.Model):
         default ='n/a'
     )
 
-    def __str__(self):
-        return self.__all__
+   

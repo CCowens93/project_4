@@ -59,11 +59,50 @@ class MentalHealthGoals extends Component{
                                 <form onSubmit={this.handleSubmit}>
                                     <div>
                                         <select
-                                            name=""
+                                            name="mental_health_goals"
                                             value={this.state.mental_health_goal}
                                             onChange={this.handleMentalHealthData}>
-
+                                                <option name="reduce_anxiety">Reduce Anxiety</option>
+                                                <option name="reduce_depression">Reduce Depression</option>
+                                                <option name="increase_self_esteem">Increase Self Esteem</option>
+                                                <option name="reduce_and_or_eliminate_substance_use">Reduce and/or Eliminate Substance Use</option>
                                         </select>
+                                    </div>
+
+                                    <div>
+                                        <select
+                                            name="medication"
+                                            value={this.state.medication}
+                                            onChange={this.handleMentalHealthData}>
+                                                <option name="does_not_apply_to_me">Does Not Apply To Me</option>
+                                                <option name="take_in_the_morning">Take In The Morning</option>
+                                                <option name="take_at_night">Take At Night</option>
+                                                <option name="take_in_morning_and_night">Take In Morning/Night</option>
+                                        </select>
+                                    </div>
+
+                                    <div>
+                                        <input
+                                            name="meditation"
+                                            type="number"
+                                            placeholder="Minutes Per Day For Meditation"
+                                            value={this.state.meditation}
+                                            onChange={this.handleMentalHealthData}>
+                                                
+                                        </input>
+                                    </div>
+
+                                    <div>
+                                        <select
+                                            name="therapy"
+                                            value={this.state.therapy}
+                                            onChange={this.handleMentalHealthData}>
+                                                <option name="does_not apply_to_me">Does Not Apply To Me</option>
+                                                <option name="twice_per_week">Twice per Week</option>
+                                                <option name="once_per_week">Once Per Week</option>
+                                                <option name="every_other_week">Every Other Week</option>
+                                                <option name="once_per_month">Once Per Month</option>
+                                            </select>
                                     </div>
 
                                     <div>
