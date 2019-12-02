@@ -78,6 +78,26 @@ class SleepGoals extends Component {
                             </div>
 
                             <div>
+                                <input 
+                                    name="bedtime"
+                                    type="time"
+                                    placeholder="Bedtime"
+                                    value={this.state.handleSleepData}
+                                    onChange={this.handleSleepData}
+                                    />
+                            </div>
+
+                            <div>
+                                <input
+                                    name="routine"
+                                    type="text"
+                                    placeholder="Routine"
+                                    value={this.state.handleSleepData}
+                                    onChange={this.handleSleepData}
+                                    />
+                            </div>
+
+                            <div>
                                 <input
                                     type="submit"
                                     value="Create Sleep Goals"
