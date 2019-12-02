@@ -1,15 +1,20 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+
 // import { Link } from 'react-router-dom'
 
 class ExerciseGoals extends Component {
+
+    
     state = {
         body_goals: '',
         workout_schedule: '',
-        hours_of_exercise: '',
+        minutes_of_exercise: '',
         daily_focus: '',
         allExerciseGoals: []
     }
+
+    
 
     handleExerciseData = (event) => {
         const attributeName = event.target.name;
@@ -22,61 +27,75 @@ class ExerciseGoals extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        axios.post('api/exercise_goal', this.state)
+        axios.post('/api/exercise_goal', this.state)
     }
 
     componentDidMount() {
         axios.get('/api/exercise_goal')
             .then((res) => {
-                console.log(res.data)
-                const allExerciseGoals = res.data;
-                this.setState({ allExerciseGoals: allExerciseGoals })
+                this.setState({ allExerciseGoals: res.data })
             })
     }
+    
     render() {
+        
+        const allExerciseGoals = this.state.allExerciseGoals;
 
-
-        {this.state.allExerciseGoals.map((exerciseGoal, i) => {
+        const ExerciseComponent = allExerciseGoals.map((exerciseGoal, i) => {
                 return (
-                    
-                        // <Link to='/'>Home</Link>
-                        
-
                             <div className='exercise' key={i}>
                                 <p>Main Goal: {exerciseGoal.body_goals}</p>
                                 <p>Schedule: {exerciseGoal.workout_schedule}</p>
                                 <p>Dedicated Time to Exercise: {exerciseGoal.minutes_of_exercise}</p>
                                 <p>Focus for the Day: {exerciseGoal.daily_focus}</p>
                             </div>);
-                    })}
+                    })
 
                         return (
+                            
+                            <div>
+                                <h2>Goals</h2>
+                            <div>
+                                {ExerciseComponent}
+                            </div>
                         <div className='form'>
                                 <form onSubmit={this.handleSubmit}>
                                     <div>
-                                        <input
+                                        <select 
                                             name="body_goals"
-                                            type="text"
-                                            placeholder="body goals"
                                             value={this.state.body_goals}
-                                            onChange={this.handleExerciseData}
-                                        />
+                                            onChange={this.handleExerciseData}>
+                                                <option name="weight_loss">Weight Loss</option>
+                                                <option name="increase_strength">Increase Strength</option>
+                                                <option name="improve_endurance">Improve Endurance</option>
+                                                <option name="reduce_health_risks">Reduce Health Risks</option>
+                                                <option name="energy_boost">Energy Boost</option>
+                                        </select>
+                                            
                                     </div>
 
                                     <div>
-                                        <input
+                                        <select
                                             name="workout_schedule"
-                                            type="text"
-                                            placeholder="workout schedule"
                                             value={this.state.workout_schedule}
-                                            onChange={this.handleExerciseData}
-                                            />
+                                            onChange={this.handleExerciseData}>
+                                                <option name="monday">Monday</option>
+                                                <option name="tuesday">Tuesday</option>
+                                                <option name="wednesday">Wednesday</option>
+                                                <option name="thursday">Thursday</option>
+                                                <option name="friday">Friday</option>
+                                                <option name="saturday">Saturday</option>
+                                                <option name="sunday">Sunday</option>
+                                            </select>
+
+                                            
+                                            
                                     </div>
 
                                     <div>
                                         <input
                                             name="minutes_of_exercise"
-                                            type="text"
+                                            type="number"
                                             placeholder="minutes of exercise"
                                             value={this.state.minutes_of_exercise}
                                             onChange={this.handleExerciseData}
@@ -84,13 +103,16 @@ class ExerciseGoals extends Component {
                                     </div>
 
                                     <div>
-                                        <input
+                                        <select
                                             name="daily_focus"
-                                            type="text"
-                                            placeholder="daily focus"
                                             value={this.state.daily_focus}
-                                            onChange={this.handleExerciseData}
-                                            />
+                                            onChange={this.handleExerciseData}>
+                                                <option name="cardio">Cardio</option>
+                                                <option name="strength_building">Strength Building</option>
+                                                <option name="flexibility">Flexibility</option>
+                                                <option name="balance">Balance</option>
+                                        </select>
+                                            
                                     </div>
 
                                     <div>
@@ -101,10 +123,11 @@ class ExerciseGoals extends Component {
                                     </div>
                                 </form>
                             </div>
+                            </div>
                 )
         }
 
     }
 
-    export default ExerciseGoals
+export default ExerciseGoals
 

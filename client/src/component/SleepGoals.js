@@ -11,6 +11,20 @@ class SleepGoals extends Component {
         allSleepGoals: []
     }
 
+    handleSleepData = (event) => {
+        const attributeName = event.target.name;
+        const attributeValue = event.target.value;
+
+        const newState = { ...this.state };
+        newState[attributeName] = attributeValue;
+        this.setState(newState)
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault()
+        axios.post('/api/sleep_goal', this.state)
+    }
+
     componentDidMount() {
         axios.get('/api/sleep_goal/')
             .then((res) => {
@@ -22,26 +36,58 @@ class SleepGoals extends Component {
 
 
     render() {
-        return (
-            <div>
-                <Link to='/'>Home</Link>
 
-                <div>
-                    {this.state.allSleepGoals.map((sleepGoal, i) => {
-                        return (
-                            <div className='sleep' key={i}>
-                                <p>Main Goal: {sleepGoal.sleep_goals}</p>
-                                <p>Hours of Sleep: {sleepGoal.hours_of_sleep}</p>
-                                <p>Bedtime: {sleepGoal.bedtime}</p>
-                                <p>Routine: {sleepGoal.routine}</p>
+        const allSleepGoals = this.state.allSleepGoals;
+
+        const SleepComponent = allSleepGoals.map((sleepGoal, i)=>{
+
+        
+        return (
+                <div className='sleep' key={i}>
+                    <p>Main Goal: {sleepGoal.sleep_goals}</p>
+                    <p>Hours of Sleep: {sleepGoal.hours_of_sleep}</p>
+                    <p>Bedtime: {sleepGoal.bedtime}</p>
+                    <p>Routine: {sleepGoal.routine}</p>
+                </div>);
+            })
+                return(
+                    <div>
+                        <h2>Goals</h2>
+                    <div>
+                        {SleepComponent}
+                    </div>
+                        <div className="form">
+                            <form onSubmit={this.handleSubmit}>
+                            <div>
+                                <select
+                                    name="sleep_goals"
+                                    value={this.state.handleSleepData}>
+                                        <option name="sleep_more">Sleep More</option>
+                                        <option name="sleep_less">Sleep Less</option>
+                                </select>
                             </div>
-                        )
-                    })}
-                </div>
-                
-            </div>
-            
+
+                            <div>
+                                <input
+                                    name="hours_of_sleep"
+                                    type="number"
+                                    placeholder="Minutes of Exercise"
+                                    value={this.state.handleSleepData}
+                                    onChange={this.handleSleepData}
+                                    />
+                            </div>
+
+                            <div>
+                                <input
+                                    type="submit"
+                                    value="Create Sleep Goals"
+                                    />
+                            </div>
+                            </form>
+                        </div>
+                        </div>
                 )
-            }
-        }
+            }  
+}
+             
 export default SleepGoals
