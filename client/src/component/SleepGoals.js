@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class SleepGoals extends Component {
     state = {
@@ -22,7 +22,7 @@ class SleepGoals extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        axios.post('/api/sleep_goal', this.state)
+        axios.post('/api/sleep_goal/', this.state)
     }
 
     componentDidMount() {
@@ -44,16 +44,17 @@ class SleepGoals extends Component {
         
         return (
                 <div className='sleep' key={i}>
-                    <p>Main Goal: {sleepGoal.sleep_goals}</p>
-                    <p>Hours of Sleep: {sleepGoal.hours_of_sleep}</p>
-                    <p>Bedtime: {sleepGoal.bedtime}</p>
-                    <p>Routine: {sleepGoal.routine}</p>
+                    <p>Main Goal: {sleepGoal.sleep_goals} <input type="checkbox"></input></p>
+                    <p>Hours of Sleep: {sleepGoal.hours_of_sleep} <input type="checkbox"></input></p>
+                    <p>Bedtime: {sleepGoal.bedtime}<input type="checkbox"></input></p>
+                    <p>Routine: {sleepGoal.routine}<input type="checkbox"></input></p>
                 </div>);
             })
                 return(
                     <div>
                         <h2>Goals</h2>
                     <div>
+                        <Link to={'/'}>Home</Link>
                         {SleepComponent}
                     </div>
                         <div className="form">
@@ -61,9 +62,10 @@ class SleepGoals extends Component {
                             <div>
                                 <select
                                     name="sleep_goals"
-                                    value={this.state.handleSleepData}>
-                                        <option name="sleep_more">Sleep More</option>
-                                        <option name="sleep_less">Sleep Less</option>
+                                    value={this.state.sleep_goals}
+                                    onChange={this.handleSleepData}>
+                                        <option name="sleep_more" value='sleep more'>Sleep More</option>
+                                        <option name="sleep_less" value='sleep less'>Sleep Less</option>
                                 </select>
                             </div>
 

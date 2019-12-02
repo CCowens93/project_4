@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import exercise from './exercise.png'
 import sleep from './sleep.png'
-import diet from './diet.png'
+import fork from './fork.png'
 import mental_health from './mental_health.png'
+
 
 
 
@@ -32,7 +33,7 @@ class Home extends Component {
                 </Link>
                 <Link to={`/dietary_goal`}>
                     <p>Dietary Goals</p>
-                    <img src={diet} alt="diet" width="350" height="350"/>
+                    <img src={fork} alt="diet" width="275" height="275"/>
                 </Link>
                 </div>
 

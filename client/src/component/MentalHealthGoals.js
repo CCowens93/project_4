@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class MentalHealthGoals extends Component{
     state = {
@@ -22,7 +22,7 @@ class MentalHealthGoals extends Component{
 
     handleSubmit = (event) => {
         event.preventDefault()
-        axios.post('/api/mental_health_goal', this.state)
+        axios.post('/api/mental_health_goal/', this.state)
     }
 
 
@@ -42,10 +42,10 @@ class MentalHealthGoals extends Component{
         const MentalHealthComponents = allMentalHealthGoals.map((mentalHealthGoal, i) => {
                     return(
                         <div className='mental_health' key={i}>
-                            <p>Main Goal: {mentalHealthGoal.mental_health_goal}</p>
-                            <p>Time Dedicated to Taking Meds: {mentalHealthGoal.medication}</p>
-                            <p>Time Dedicated to Meditation: {mentalHealthGoal.meditation}</p>
-                            <p>Set Time to Attend Therapy: {mentalHealthGoal.therapy}</p>
+                            <p>Main Goal: {mentalHealthGoal.mental_health_goal}<input type="checkbox"></input></p>
+                            <p>Time Dedicated to Taking Meds: {mentalHealthGoal.medication}<input type="checkbox"></input></p>
+                            <p>Time Dedicated to Meditation: {mentalHealthGoal.meditation}<input type="checkbox"></input></p>
+                            <p>Set Time to Attend Therapy: {mentalHealthGoal.therapy}<input type="checkbox"></input></p>
                         </div>);
                 })
 
@@ -53,19 +53,20 @@ class MentalHealthGoals extends Component{
                             <div>
                                 <h2>Goals</h2>
                             <div>
+                                <Link to={'/'}>Home</Link>
                                 {MentalHealthComponents}
                             </div>
                             <div className="form">
                                 <form onSubmit={this.handleSubmit}>
                                     <div>
                                         <select
-                                            name="mental_health_goals"
+                                            name="mental_health_goal"
                                             value={this.state.mental_health_goal}
                                             onChange={this.handleMentalHealthData}>
-                                                <option name="reduce_anxiety">Reduce Anxiety</option>
-                                                <option name="reduce_depression">Reduce Depression</option>
-                                                <option name="increase_self_esteem">Increase Self Esteem</option>
-                                                <option name="reduce_and_or_eliminate_substance_use">Reduce and/or Eliminate Substance Use</option>
+                                                <option name="reduce_anxiety" value='reduce anxiety'>Reduce Anxiety</option>
+                                                <option name="reduce_depression" value='reduce depression'>Reduce Depression</option>
+                                                <option name="increase_self_esteem" value='increase self-esteem'>Increase Self Esteem</option>
+                                                <option name="reduce_and_or_eliminate_substance_use" value='substance use'>Reduce and/or Eliminate Substance Use</option>
                                         </select>
                                     </div>
 
@@ -74,10 +75,10 @@ class MentalHealthGoals extends Component{
                                             name="medication"
                                             value={this.state.medication}
                                             onChange={this.handleMentalHealthData}>
-                                                <option name="does_not_apply_to_me">Does Not Apply To Me</option>
-                                                <option name="take_in_the_morning">Take In The Morning</option>
-                                                <option name="take_at_night">Take At Night</option>
-                                                <option name="take_in_morning_and_night">Take In Morning/Night</option>
+                                                <option name="does_not_apply_to_me" value='does not apply to me'>Does Not Apply To Me</option>
+                                                <option name="take_in_the_morning" value='take in the morning'>Take In The Morning</option>
+                                                <option name="take_at_night"value='take at night'>Take At Night</option>
+                                                <option name="take_in_morning_and_night" value='take in the morning and night'>Take In Morning/Night</option>
                                         </select>
                                     </div>
 
@@ -97,11 +98,11 @@ class MentalHealthGoals extends Component{
                                             name="therapy"
                                             value={this.state.therapy}
                                             onChange={this.handleMentalHealthData}>
-                                                <option name="does_not apply_to_me">Does Not Apply To Me</option>
-                                                <option name="twice_per_week">Twice per Week</option>
-                                                <option name="once_per_week">Once Per Week</option>
-                                                <option name="every_other_week">Every Other Week</option>
-                                                <option name="once_per_month">Once Per Month</option>
+                                                <option name="does_not apply_to_me" value='does not apply to me'>Does Not Apply To Me</option>
+                                                <option name="twice_per_week" value='twice a week'>Twice per Week</option>
+                                                <option name="once_per_week" value='once a week'>Once Per Week</option>
+                                                <option name="every_other_week" value='every other week'>Every Other Week</option>
+                                                <option name="once_per_month" value='once a month'>Once Per Month</option>
                                             </select>
                                     </div>
 

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class ExerciseGoals extends Component {
 
@@ -38,17 +37,18 @@ class ExerciseGoals extends Component {
             })
     }
     
+    
     render() {
-        
+       
         const allExerciseGoals = this.state.allExerciseGoals;
 
         const ExerciseComponent = allExerciseGoals.map((exerciseGoal, i) => {
                 return (
-                            <div className='exercise' key={i}>
-                                <p>Main Goal: {exerciseGoal.body_goals}</p>
-                                <p>Schedule: {exerciseGoal.workout_schedule}</p>
-                                <p>Dedicated Time to Exercise: {exerciseGoal.minutes_of_exercise}</p>
-                                <p>Focus for the Day: {exerciseGoal.daily_focus}</p>
+                            <div className='exercise'  key={i}>
+                                <p>Main Goal: {exerciseGoal.body_goals} <input type="checkbox"></input></p>
+                                <p>Schedule: {exerciseGoal.workout_schedule} </p>
+                                <p>Dedicated Minutes to Exercise: {exerciseGoal.minutes_of_exercise} <input type="checkbox"></input></p>
+                                <p>Focus for the Day: {exerciseGoal.daily_focus}<input type="checkbox"></input></p>
                                 
                                 
                             </div>);
@@ -57,12 +57,14 @@ class ExerciseGoals extends Component {
                         return (
                             
                             <div>
-                                <h2>Choose what goal you want to achieve and make a schedule for yourself</h2>
-                            <div>
+                                <h2>Choose what goal you want to achieve and make a schedule for yourself!</h2>
+                            <div className="link">
+                                <Link to={'/'}>Home</Link>
                                 {ExerciseComponent}
                             </div>
                         <div className='form'>
-                                <form onSubmit={this.handleSubmit}>
+                       
+                                <form onSubmit={this.handleSubmit} class="pure-form pure-form-aligned">
                                     <div>
                                         <select 
                                             name="body_goals"
@@ -111,9 +113,9 @@ class ExerciseGoals extends Component {
                                             value={this.state.daily_focus}
                                             onChange={this.handleExerciseData}>
                                                 <option name='cardio' value='cardio'>Cardio</option>
-                                                <option name='strength_building' value='build strength'>Strength Building</option>
-                                                <option name='flexibility' value="flexibility">Flexibility</option>
-                                                <option name='balance' value='balance'>Balance</option>
+                                                <option name='weight_lifting' value='weight lifting'>Weight Lifting</option>
+                                                <option name='yoga' value="yoga">Yoga</option>
+                                               
                                         </select>
                                             
                                     </div>
@@ -126,6 +128,7 @@ class ExerciseGoals extends Component {
                                     </div>
                                 </form>
                             </div>
+                            
                             </div>
                 )
         }

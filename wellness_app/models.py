@@ -1,9 +1,20 @@
 from django.db import models
 
 class SleepGoal(models.Model):
+
+    sleep_more = 'sleep more'
+    sleep_less = 'sleep less'
+
+    sleep_choices = [
+        (sleep_more, 'sleep more'),
+        (sleep_less, 'sleep less')
+    ]
+
     sleep_goals = models.CharField(
         max_length=255, 
+        choices=sleep_choices,
         default='n/a',)
+
     hours_of_sleep = models.IntegerField( 
         default='n/a')
     bedtime = models.TimeField(
@@ -68,15 +79,14 @@ class ExerciseGoal(models.Model):
     )
  
     cardio = 'cardio'
-    strength_building = 'build strength'
-    flexibility = 'flexibility'
-    balance = 'balance'
+    weight_lifting = 'weight lifting'
+    yoga = 'yoga'
  
     type_of_exercise = [
         (cardio, 'cardio'),
-        (strength_building, 'build strength'),
-        (flexibility, 'flexibility'),
-        (balance, 'balance')
+        (weight_lifting, 'weight lifting'),
+        (yoga, 'yoga'),
+       
     ]
  
     daily_focus = models.CharField(
@@ -116,7 +126,7 @@ class MentalHealthGoal(models.Model):
         (does_not_apply_to_me, 'does not apply to me'),
         (take_in_the_morning, 'take in the morning'),
         (take_at_night, 'take at night'),
-        (take_in_morning_and_night, 'take in the moring and night')
+        (take_in_morning_and_night, 'take in the morning and night')
     ]
  
     medication = models.CharField(
@@ -130,7 +140,7 @@ class MentalHealthGoal(models.Model):
         max_length = 255,
         default ='n/a'
     )
-    
+    does_not_apply_to_me = 'does not apply to me'
     twice_a_week = 'twice a week'
     once_a_week = 'once a week'
     every_other_week = 'every other week'

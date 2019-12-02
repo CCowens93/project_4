@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 class DietaryGoals extends Component{
@@ -39,8 +39,8 @@ class DietaryGoals extends Component{
                     
             return(
                         <div className='diet' key={i}>
-                                <p>Main Goal: {dietaryGoal.dietary_goal}</p>
-                                <p>Foods to Eliminate: {dietaryGoal.elimination}</p>
+                                <p>Main Goal: {dietaryGoal.dietary_goal} <input type="checkbox"></input></p>
+                                <p>Foods to Eliminate: {dietaryGoal.elimination} <input type="checkbox"></input></p>
                         </div>);
         })
 
@@ -48,6 +48,7 @@ class DietaryGoals extends Component{
                 <div>
                     <h2>Goals</h2>
                 <div>
+                    <Link to={'/'}>Home</Link>
                     {DietaryComponent}
                 </div>
                     <div className='form'>
