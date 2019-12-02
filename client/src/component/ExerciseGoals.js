@@ -33,6 +33,7 @@ class ExerciseGoals extends Component {
     componentDidMount() {
         axios.get('/api/exercise_goal')
             .then((res) => {
+                console.log(res.data)
                 this.setState({ allExerciseGoals: res.data })
             })
     }

@@ -21,7 +21,7 @@ class DietaryGoals extends Component{
 
     handleSubmit = (event) => {
         event.preventDefault()
-        axios.post('/api/dietary_goal', this.state)
+        axios.post('/api/dietary_goal/', this.state)
     }
 
     componentDidMount(){
@@ -50,36 +50,38 @@ class DietaryGoals extends Component{
                 <div>
                     {DietaryComponent}
                 </div>
-                    <div className="form">
+                    <div className='form'>
                         <form onSubmit={this.handleSubmit}>
                         <div>
                             <select
-                                name="dietary_goals"
-                                value={this.state.handleDietaryData}>
-                                    <option name="lose_weight" value='lose weight'>Lose Weight</option>
-                                    <option name="gain_weight" value='gain weight'>Gain Weight</option>
-                                    <option name="improve_health" value='improve health'>Improve Health</option>
+                                name="dietary_goal"
+                                value={this.state.dietary_goal}
+                                onChange={this.handleDietaryData}>
+                                    <option name='lose_weight' value='lose weight'>Lose Weight</option>
+                                    <option name='gain_weight' value='gain weight'>Gain Weight</option>
+                                    <option name='improve_health' value='improve health'>Improve Health</option>
                             </select>
                         </div>
 
                         <div>
                             <select
-                                name="elimination_choices"
-                                value={this.state.handleDietaryData}>
-                                    <option name="dairy">Dairy</option>
-                                    <option name="soy">Soy</option>
-                                    <option name="red_meat">Red Meat</option>
-                                    <option name="pork">Pork</option>
-                                    <option name="processed_sugar">Processed Sugar</option>
-                                    <option name="alcohol">Alcohol</option>
-                                    <option name="gluten">Gluten</option>
+                                name="elimination"
+                                value={this.state.elimination}
+                                onChange={this.handleDietaryData}>
+                                    <option name='dairy' value='dairy'>Dairy</option>
+                                    <option name='soy' value='soy'>Soy</option>
+                                    <option name='red_meat' value='red meat'>Red Meat</option>
+                                    <option name='pork' value='pork'>Pork</option>
+                                    <option name='processed_sugar' value='processed sugar'>Processed Sugar</option>
+                                    <option name='alcohol' value='alcohol'>Alcohol</option>
+                                    <option name='gluten' value='gluten'>Gluten</option>
                                 </select>
                         </div>
 
                         <div>
                             <input
                                 type="submit"
-                                value="Create Mental Health Goals"
+                                value="Create Dietary Goals"
                                 />
                         </div>
                         </form>
