@@ -14,7 +14,7 @@ class Home extends Component {
     render() {
         return (
             <div className="home">
-                <h1>Universe-al Health Care</h1>
+                <h1>Wellness App</h1>
                 <div className="sprites1">
                 <Link to={`/sleep_goal`}>
                     <p>Sleep Goals</p>
