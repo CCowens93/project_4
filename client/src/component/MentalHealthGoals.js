@@ -61,6 +61,7 @@ class MentalHealthGoals extends Component{
                             <div className="form">
                                 <form onSubmit={this.handleSubmit}>
                                     <div>
+                                        <p>mental health goal</p>
                                         <select
                                             name="mental_health_goal"
                                             value={this.state.mental_health_goal}
@@ -73,6 +74,7 @@ class MentalHealthGoals extends Component{
                                     </div>
 
                                     <div>
+                                        <p>Dedicated time to take meds</p>
                                         <select
                                             name="medication"
                                             value={this.state.medication}
@@ -85,6 +87,7 @@ class MentalHealthGoals extends Component{
                                     </div>
 
                                     <div>
+                                        <p>Dedicated to meditate</p>
                                         <input
                                             name="meditation"
                                             type="number"
@@ -96,6 +99,7 @@ class MentalHealthGoals extends Component{
                                     </div>
 
                                     <div>
+                                        <p>Commitment to go to therapy</p>
                                         <select
                                             name="therapy"
                                             value={this.state.therapy}

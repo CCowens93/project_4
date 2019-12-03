@@ -62,6 +62,7 @@ class SleepGoals extends Component {
                         <div className="form">
                             <form onSubmit={this.handleSubmit}>
                             <div>
+                                <p>Sleep goals</p>
                                 <select
                                     name="sleep_goals"
                                     value={this.state.sleep_goals}
@@ -72,6 +73,7 @@ class SleepGoals extends Component {
                             </div>
 
                             <div>
+                                <p>Hours of sleep</p>
                                 <input
                                     name="hours_of_sleep"
                                     type="number"
@@ -82,6 +84,7 @@ class SleepGoals extends Component {
                             </div>
 
                             <div>
+                                <p>Determine bedtime</p>
                                 <input 
                                     name="bedtime"
                                     type="time"
@@ -92,6 +95,7 @@ class SleepGoals extends Component {
                             </div>
 
                             <div>
+                                <p>Set a routine</p>
                                 <input
                                     name="routine"
                                     type="text"

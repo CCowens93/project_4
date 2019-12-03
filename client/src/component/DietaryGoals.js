@@ -56,6 +56,7 @@ class DietaryGoals extends Component{
                     <div className='form'>
                         <form onSubmit={this.handleSubmit}>
                         <div>
+                            <p>Goal of diet</p>
                             <select
                                 name="dietary_goal"
                                 value={this.state.dietary_goal}
@@ -67,6 +68,7 @@ class DietaryGoals extends Component{
                         </div>
 
                         <div>
+                            <p>Foods to eliminate</p>
                             <select
                                 name="elimination"
                                 value={this.state.elimination}
