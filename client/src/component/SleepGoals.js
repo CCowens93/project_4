@@ -53,7 +53,7 @@ class SleepGoals extends Component {
                 return(
                     <div>
                         <h2>Choose what goal you want to achieve and make a schedule for yourself!</h2>
-                    <div>
+                    <div className="link">
                         <Link to={'/'}>Home</Link>
                     </div>
                     <div className="component">

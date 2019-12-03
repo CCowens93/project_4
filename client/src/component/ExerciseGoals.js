@@ -47,10 +47,10 @@ class ExerciseGoals extends Component {
         const ExerciseComponent = allExerciseGoals.map((exerciseGoal, i) => {
                 return (
                             <div className='exercise'  key={i}>
-                                <p>Main Goal: {exerciseGoal.body_goals} <input type="checkbox"></input></p>
-                                <p>Schedule: {exerciseGoal.workout_schedule} </p>
-                                <p>Dedicated Minutes to Exercise: {exerciseGoal.minutes_of_exercise} <input type="checkbox"></input></p>
-                                <p>Focus for the Day: {exerciseGoal.daily_focus}<input type="checkbox"></input></p>
+                                <p>Main Goal\ {exerciseGoal.body_goals} <input type="checkbox"></input></p>
+                                <p>Schedule\ {exerciseGoal.workout_schedule} </p>
+                                <p>Dedicated Minutes to Exercise\ {exerciseGoal.minutes_of_exercise} <input type="checkbox"></input></p>
+                                <p>Focus for the Day\ {exerciseGoal.daily_focus}<input type="checkbox"></input></p>
                                 
                                 
                             </div>);

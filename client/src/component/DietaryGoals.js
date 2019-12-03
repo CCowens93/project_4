@@ -39,15 +39,15 @@ class DietaryGoals extends Component{
                     
             return(
                         <div className='diet' key={i}>
-                                <p>Main Goal: {dietaryGoal.dietary_goal} <input type="checkbox"></input></p>
-                                <p>Foods to Eliminate: {dietaryGoal.elimination} <input type="checkbox"></input></p>
+                                <p>Main Goal\ {dietaryGoal.dietary_goal} <input type="checkbox"></input></p>
+                                <p>Foods to Eliminate\ {dietaryGoal.elimination} <input type="checkbox"></input></p>
                         </div>);
         })
 
             return(
                 <div>
                     <h2>Choose what goal you want to achieve and make a schedule for yourself!</h2>
-                <div>
+                <div className="link">
                     <Link to={'/'}>Home</Link>
                 </div>
                 <div className="component">

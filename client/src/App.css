@@ -9,14 +9,18 @@ h1{
 }
 h2{
   text-align: center;
+  font-family: 'Solway', serif;
 }
 p {
   text-decoration: none;
   display:block;
   text-align: center;
+  font-family: 'Solway', serif;
 }
 .link{
   align-content: center;
+  font-family: 'Solway', serif;
+  
 }
 
 .sprites1{
@@ -124,5 +128,16 @@ p {
 }
 
 form{
-  width:100px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  box-shadow: 4px 4px 15px 1px #000;
+  width: 250px;
+  height: 200px;
+  margin: 100px;
+  vertical-align:bottom;
+  padding:20px;
+  
 }
+
