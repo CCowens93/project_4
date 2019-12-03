@@ -46,7 +46,7 @@ class DietaryGoals extends Component{
 
             return(
                 <div>
-                    <h2>Goals</h2>
+                    <h2>Choose what goal you want to achieve and make a schedule for yourself!</h2>
                 <div>
                     <Link to={'/'}>Home</Link>
                     {DietaryComponent}

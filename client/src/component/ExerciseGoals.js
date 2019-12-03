@@ -40,11 +40,7 @@ class ExerciseGoals extends Component {
     
     
     render() {
-        var schedule = require('node-schedule');
- 
-        var j = schedule.scheduleJob('1 * * * *', function(){
-        console.log('The answer to life, the universe, and everything!');
-        });
+       
        
         const allExerciseGoals = this.state.allExerciseGoals;
 
@@ -66,11 +62,13 @@ class ExerciseGoals extends Component {
                                 <h2>Choose what goal you want to achieve and make a schedule for yourself!</h2>
                             <div className="link">
                                 <Link to={'/'}>Home</Link>
+                            </div>
+                            <div className="component">
                                 {ExerciseComponent}
                             </div>
                         <div className='form'>
                        
-                                <form onSubmit={this.handleSubmit} class="pure-form pure-form-aligned">
+                                <form onSubmit={this.handleSubmit}>
                                     <div>
                                         <select 
                                             name="body_goals"

@@ -44,15 +44,15 @@ class SleepGoals extends Component {
         
         return (
                 <div className='sleep' key={i}>
-                    <p>Main Goal: {sleepGoal.sleep_goals} <input type="checkbox"></input></p>
-                    <p>Hours of Sleep: {sleepGoal.hours_of_sleep} <input type="checkbox"></input></p>
-                    <p>Bedtime: {sleepGoal.bedtime}<input type="checkbox"></input></p>
-                    <p>Routine: {sleepGoal.routine}<input type="checkbox"></input></p>
+                    <p>Main Goal\ {sleepGoal.sleep_goals} <input type="checkbox"></input></p>
+                    <p>Hours of Sleep\ {sleepGoal.hours_of_sleep} <input type="checkbox"></input></p>
+                    <p>Bedtime\ {sleepGoal.bedtime}<input type="checkbox"></input></p>
+                    <p>Routine\ {sleepGoal.routine}<input type="checkbox"></input></p>
                 </div>);
             })
                 return(
                     <div>
-                        <h2>Goals</h2>
+                        <h2>Choose what goal you want to achieve and make a schedule for yourself!</h2>
                     <div>
                         <Link to={'/'}>Home</Link>
                         {SleepComponent}
