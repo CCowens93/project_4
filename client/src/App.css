@@ -69,11 +69,8 @@ p {
    padding-bottom:10px;
 }
 
-/* .link{
-  outline: 8px solid #258fdb;
-} */
+
 .sleep{
-  /* outline: 8px solid #258fdb; */
   width:425px;
   height: 200px;
   margin: auto;
@@ -84,8 +81,48 @@ p {
 }
 
 .mental_health{
-  outline: 8px solid #258fdb;
   width:400px;
   height: 200px;
   margin: auto;
+  box-shadow: 4px 4px 15px 1px #3a8bd6;
+  border-radius: 14px;
+  letter-spacing: 4px;
+  text-align: justify;
+}
+
+.exercise{
+  width:410px;
+  height: 200px;
+  margin: auto;
+  box-shadow: 4px 4px 15px 1px #3a8bd6;
+  border-radius: 14px;
+  letter-spacing: 4px;
+  text-align: justify;
+
+}
+
+.diet{
+  width:400px;
+  height: 200px;
+  margin: auto;
+  box-shadow: 4px 4px 15px 1px #3a8bd6;
+  border-radius: 14px;
+  letter-spacing: 4px;
+  text-align: justify;
+  
+}
+
+.component{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: space-evenly;
+}
+
+.link{
+  text-align:center;
+  margin: 30px;
+}
+
+form{
+  width:100px;
 }

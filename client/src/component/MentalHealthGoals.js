@@ -42,10 +42,10 @@ class MentalHealthGoals extends Component{
         const MentalHealthComponents = allMentalHealthGoals.map((mentalHealthGoal, i) => {
                     return(
                         <div className='mental_health' key={i}>
-                            <p>Main Goal: {mentalHealthGoal.mental_health_goal}<input type="checkbox"></input></p>
-                            <p>Time Dedicated to Taking Meds: {mentalHealthGoal.medication}<input type="checkbox"></input></p>
-                            <p>Time Dedicated to Meditation: {mentalHealthGoal.meditation}<input type="checkbox"></input></p>
-                            <p>Set Time to Attend Therapy: {mentalHealthGoal.therapy}<input type="checkbox"></input></p>
+                            <p>Main Goal\ {mentalHealthGoal.mental_health_goal}<input type="checkbox"></input></p>
+                            <p>Time Dedicated to Taking Meds\ {mentalHealthGoal.medication}<input type="checkbox"></input></p>
+                            <p>Time Dedicated to Meditation\ {mentalHealthGoal.meditation}<input type="checkbox"></input></p>
+                            <p>Set Time to Attend Therapy\ {mentalHealthGoal.therapy}<input type="checkbox"></input></p>
                         </div>);
                 })
 
@@ -54,6 +54,8 @@ class MentalHealthGoals extends Component{
                                 <h2>Choose what goal you want to achieve and make a schedule for yourself!</h2>
                             <div>
                                 <Link to={'/'}>Home</Link>
+                            </div>
+                            <div className="component">
                                 {MentalHealthComponents}
                             </div>
                             <div className="form">

@@ -55,6 +55,8 @@ class SleepGoals extends Component {
                         <h2>Choose what goal you want to achieve and make a schedule for yourself!</h2>
                     <div>
                         <Link to={'/'}>Home</Link>
+                    </div>
+                    <div className="component">
                         {SleepComponent}
                     </div>
                         <div className="form">

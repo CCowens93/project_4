@@ -49,6 +49,8 @@ class DietaryGoals extends Component{
                     <h2>Choose what goal you want to achieve and make a schedule for yourself!</h2>
                 <div>
                     <Link to={'/'}>Home</Link>
+                </div>
+                <div className="component">
                     {DietaryComponent}
                 </div>
                     <div className='form'>
