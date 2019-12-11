@@ -36,8 +36,6 @@ class Home extends Component {
                     <img src={fork} alt="diet" width="275" height="275"/>
                 </Link>
                 </div>
-
-
             </div>
         )
     }
